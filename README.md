@@ -27,10 +27,10 @@ The daily URV rates, the conversion of CR$ 2,750 to R$ 1 on July 1, 1994, the mi
 
 ## Open items
 
-- The two Wilfredor photographs are CC0 1.0 (confirmed from their Commons metadata). “Favela do Vidigal” still needs its author and license in the credits.
+- Photograph licenses are confirmed: the two Wilfredor photographs are CC0 1.0, and “Favela do Vidigal” (roney, 2006) is CC BY 2.0.
 - The daily URV values come through Wikipedia's copy of the Banco Central table. The Bank's own daily series still needs a direct citation.
 - The DIEESE food basket figure comes through news reports, not DIEESE's own table.
 
 ## Rights
 
-This repository has no license yet, so all rights are reserved. Each photograph carries its own credit, and the Wikimedia Commons photographs keep their original licenses.
+This repository has no license yet, so all rights are reserved. Each photograph carries its own credit, and the Wikimedia Commons photographs keep their original licenses (CC0 1.0 and CC BY 2.0).
