@@ -254,7 +254,7 @@ night:()=>{const d=S.d,h=WHO.filter(([k])=>!S.plates[k]);let t='';
  if(!h.length)t='<p>Everyone ate tonight.</p><p>'+TALK[d%TALK.length][0]+' says, '+TALK[d%TALK.length][1]+'</p>'+(CUP[d]?`<p>${CUP[d]}</p>`:'')+(S.fedJon?'<p>Jonatas ate too.</p>':'');
  if(h.length){const first=S.hungry.slice(0,d).every(x=>!x||!x.length),s3=h.filter(([k])=>streak(k,d)===3);
   if(d===11)t=`<p>${NIGHT[11]}</p>`+s3.map(([k])=>`<p>${STREAK3[k][d%STREAK3[k].length]}</p>`).join('');
-  else t=h.map(([k],i)=>{if(firstFor(k,d))return`<p>${k==='wife'&&h.some(x=>x[0]==='you')&&!h.some(x=>x[0]==='kids')?ADNA_SPECIAL:FIRSTP[k]}</p>`;const v=streak(k,d)===3?STREAK3[k]:HUNGRY[k];return`<p>${v[(d+i)%v.length]}</p>`}).join('')+(NIGHT[d]?`<p>${NIGHT[d]}</p>`:'');
+  else t=h.map(([k],i)=>{if(firstFor(k,d))return`<p>${k==='wife'&&h.some(x=>x[0]==='you')&&!h.some(x=>x[0]==='kids')?ADNA_SPECIAL:FIRSTP[k]}</p>`;const v=streak(k,d)===3?STREAK3[k]:HUNGRY[k];return`<p>${v[(d+i)%v.length]}</p>`}).join('')+(NIGHT[d]&&(d!==12||h.some(([k])=>k==='kids'))&&(d!==10||h.length>=3)?`<p>${NIGHT[d]}</p>`:'');
   if(first)t=`<p>${FIRST}</p>`+t;
   if(s3.length)t+=`<p>${DAY3I}</p>`;
   if(S.share===d)t=(first?`<p>${FIRST}</p>`:'')+`<p>${SHARE}</p>`}
