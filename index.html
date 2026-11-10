@@ -54,6 +54,7 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;bac
 .plate[aria-pressed=true]{background:var(--fruit);color:var(--onfruit);border-color:var(--fruit)}
 .plate[aria-pressed=true] i{background:var(--onfruit);border-color:var(--onfruit)}
 .plate:disabled{opacity:.45;cursor:not-allowed}
+.plate .pst{font-size:.7rem;opacity:.8}
 table{width:100%;border-collapse:collapse;font-size:.92rem}td{padding:5px 0;border-bottom:1px solid var(--rule)}td:last-child{text-align:right;font-family:var(--hand);font-size:1.1rem}
 .cite p{padding-left:1.5em;text-indent:-1.5em;font-size:.88rem;overflow-wrap:anywhere}
 .night{position:fixed;inset:0;background:var(--night);color:var(--nightfg);z-index:30;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;gap:10px;cursor:pointer;border:0;width:100%}
@@ -213,6 +214,11 @@ price:()=>{const d=S.d,real=E.isReal(d);let h=`${bar()}<div class="sheet"><p cla
  h+=calcBox();for(const k of SHOW){const v=d===11?50:real?Math.round(S.prices[k]/E.CONV*100):Math.round(S.prices[k]/10)*10;
   h+=`<div class="grp"><header><span>${NAMES[k]}</span><output id="o_${k}" class="num"></output></header><input type="range" id="p_${k}" data-k="${k}" min="${real?5:100}" max="${real?200:4400}" step="${real?1:10}" value="${v}" aria-label="${PLAIN[k]} price"><p class="small soft num" id="h_${k}"></p></div>`}
  h+=`</div><button class="go" data-act="open">Open the cart</button>`;setTimeout(()=>SHOW.forEach(upd));return h},
+realq:()=>{const d=S.d,cr=Math.round(S.prices.fre),r=cr/E.CONV,opts=S.rq.opts,a=S.rq.ans;
+ const why={right:`She turns the note over. “That is all? It looks like nothing.” She pays and walks off shaking her head. The bag costs what it cost yesterday. Only the number got smaller.`,old:`Dona Cida laughs out loud. “Julio! ${'R$ '+cr.toLocaleString('en-US')}? The whole minimum wage is sixty-four reais.” You divide ${'CR$ '+cr.toLocaleString('en-US')} by 2,750 in your head and try again.`,zeros:`She frowns. “My son says to knock off three zeros.” “Then you pay more than yesterday,” you say. You divide by 2,750, not 1,000.`};
+ let t=`<p>Before you set your prices, Dona Cida, one of your regulars, stops at the cart. She holds up a crisp new note, the first real you have seen up close. Yesterday she paid you <b class="num">CR$ ${cr.toLocaleString('en-US')}</b> for a bag of bananas.</p><p>“Julio, what do bananas cost in this money?”</p><p class="small">R$ 1 = CR$ 2,750.</p>`;
+ if(a)return`${bar()}<div class="sheet"><p class="eyebrow">Friday, July 1 · The first morning of the real</p>${t}<p><b>You said ${opts[a.i][0]}.</b></p><p>${why[opts[a.i][1]]}</p></div><button class="go" data-go="price">Set your prices in reais</button>`;
+ return`${bar()}<div class="sheet"><p class="eyebrow">Friday, July 1 · The first morning of the real</p>${t}</div><div class="stack">${opts.map((o,i)=>`<button class="alt num" data-rq="${i}">“${o[0]}.”</button>`).join('')}</div>`},
 event:()=>{const ev=S.evq[0],d=S.d;let t='',b='';
  if(ev.t==='haggle'){t=`<p>A ${ev.g==='tur'?'tourist':ev.g==='fre'?'regular':'passerby'} picks up a bag and puts it down. “${fm(ev.offer,d)}. That’s all I pay.” You asked ${fm(S.prices[ev.g],d)}.</p>`;b=`<button class="alt" data-ev="yes">Take the ${fm(ev.offer,d)}</button><button class="alt" data-ev="no">Hold your price</button>`}
  if(ev.t==='fiado'){t=`<p>A neighbor from two doors up wants two bags ${g('fiado')}. “Julio, I pay you when the money comes.”</p>`;b=`<button class="alt" data-ev="yes">Hand her the two bags</button><button class="alt" data-ev="no">Say no</button>`}
@@ -227,9 +233,9 @@ evening:()=>{const d=S.d,pc=E.plateCost(d),max=Math.min(5,Math.floor(S.take/pc))
  else if(d===5||d===6)news='No new rate on the weekend. Friday’s number stands: CR$ '+E.rate(d).toLocaleString('en-US',{minimumFractionDigits:2})+'.';
  else if(d===10)news='The radio at the '+g('boteco')+' gives the final rate: CR$ 2,750.00. Tomorrow that buys one real.';
  else news=(d%2?'A day-old paper wraps somebody’s fish. You read the rate off it':'The radio at the '+g('boteco')+' gives today’s rate')+`: CR$ ${E.rate(d).toLocaleString('en-US',{minimumFractionDigits:2})}. This morning you priced with <s>CR$ ${known(d).toLocaleString('en-US',{minimumFractionDigits:2})}</s>.`;
- const pl=WHO.map(([k,n])=>`<button class="plate" data-plate="${k}" aria-pressed="${!!S.plates[k]}"><i></i>${n}</button>`).join('');
+ const pl=WHO.map(([k,n])=>`<button class="plate" data-plate="${k}" aria-pressed="${!!S.plates[k]}"><i></i>${n}<span class="pst">${S.plates[k]?'Eats':'Tap to feed'}</span></button>`).join('');
  const c=E.unitCost(d<7?0:7)*(E.rate(d)/E.rate(d<7?0:7));
- return`${bar()}${ph('evening')}<div class="sheet"><p class="eyebrow">Evening</p><p>${news}</p><p>You carry home <b class="num">${fm(S.take,d)}</b>. At the ${g('armazém')} a plate of rice and beans costs <b class="num">${fm(pc,d)}</b> tonight.</p>${d===6?`<p>Sunday. Adna lifts the lid on the pot. “A month since we had ${g('feijoada')} on a Sunday,” she says, and sets the lid back down.</p>`:''}${max<1?'<p>It does not buy one plate.</p>':`<p>It buys ${max} of 5 plates. Choose who eats. What you keep goes into the ${g('lata')} for Monday’s fruit.</p>`}<div class="plates">${pl}</div><p class="small soft num" id="left"></p></div><button class="go" data-act="night">${max<1?'Put it in the lata':'Hand Adna the money'}</button>`},
+ return`${bar()}${ph('evening')}<div class="sheet"><p class="eyebrow">Evening</p><p>${news}</p><p>You carry home <b class="num">${fm(S.take,d)}</b>. At the ${g('armazém')} a plate of rice and beans costs <b class="num">${fm(pc,d)}</b> tonight.</p>${d===6?`<p>Sunday. Adna lifts the lid on the pot. “A month since we had ${g('feijoada')} on a Sunday,” she says, and sets the lid back down.</p>`:''}${max<1?'<p>It does not buy one plate.</p>':`<p>It buys ${max} of 5 plates. Tap each person who eats tonight. Nobody eats unless you choose them. What you keep goes into the ${g('lata')} for Monday’s fruit.</p>`}<div class="plates">${pl}</div><p class="small soft num" id="left"></p></div><button class="go" data-act="night">${max<1?'Put it in the lata':'Hand Adna the money'}</button>`},
 sister:()=>{const d=S.d,pc=E.plateCost(d);return d===1?`${bar()}<div class="sheet"><p class="eyebrow">Tuesday night</p><p>Your sister comes in late from the federal building where she cleans the floors. She smells of floor wax and bus exhaust. She unfolds a note from her apron and holds it out.</p><p>“It is what is left of my pay. Take it for the pot.”</p><p>You push her hand back. “Pay your bus fare. It is the twenty-first. You have ten days to go.”</p><p>“Then I will ask again.” She puts the note back in her apron and goes to wash.</p></div><button class="go" data-act="sis">Go home</button>`:`${bar()}<div class="sheet"><p class="eyebrow">Saturday night</p><p>Your sister comes in with her pay envelope. Her pay arrives once a month, and Friday was the first. She sets the envelope on the table beside the empty pot.</p><p>“I ate at work. They feed the cleaners at the canteen. Do not tell me no this time, Julio.”</p><p>You count it: <b class="num">${fm(pc,d)}</b>. It buys one plate.</p><p>“I asked you on the twenty-first,” she says. “I said I would ask again.”</p></div><button class="go" data-act="sis">Take it</button>`},
 jonatas:()=>`${bar()}<div class="sheet"><p class="eyebrow">Leftovers</p><h2>Jonatas (${g('Morador da Rua')})</h2><p>Everyone ate, and the pot still holds a little. Jonatas lives in the alley near your home. He sits where he always sits.</p></div><div class="row"><button class="alt" data-jon="1">Yes. Take him a plate.</button><button class="alt" data-jon="0">No. Keep it for morning.</button></div>`,
 night:()=>{const d=S.d,h=WHO.filter(([k])=>!S.plates[k]);let t='';
@@ -309,24 +315,26 @@ function resolve(v){const ev=S.evq.shift(),d=S.d;
  if(ev.t==='change'){const o=ev.opts[+v];if(o===ev.right){S.take+=ev.price;takeBag(1);S.evUnits++;S.evlog.push('You counted the change right.')}else if(o>ev.right){S.take+=ev.price-(o-ev.right);takeBag(1);S.evUnits++;S.evlog.push('You handed back CR$ '+(o-ev.right)+' too much. He kept it.')}else S.evlog.push('He counted it, took his note back, and left without the bag.')}
  go(S.evq.length?'event':'sales')}
 function platesLeft(){const d=S.d,pc=E.plateCost(d),n=WHO.filter(([k])=>S.plates[k]).length,max=Math.min(5,Math.floor(S.take/pc));
- document.querySelectorAll('.plate').forEach(b=>{const k=b.dataset.plate;b.setAttribute('aria-pressed',!!S.plates[k]);b.disabled=!S.plates[k]&&n>=max});
- const el=$('#left');if(el)el.textContent=max<1?'':`${n} plates: ${fm(n*pc,d)}. Into the lata: ${fm(S.take-n*pc,d)}.`}
+ document.querySelectorAll('.plate').forEach(b=>{const k=b.dataset.plate;b.setAttribute('aria-pressed',!!S.plates[k]);b.disabled=!S.plates[k]&&n>=max;const st=b.querySelector('.pst');if(st)st.textContent=S.plates[k]?'Eats':n>=max?'No money left':'Tap to feed'});
+ const el=$('#left');if(el)el.textContent=max<1?'':n===0?`Nobody eats yet. Into the lata: ${fm(S.take,d)}.`:`${n} of ${max} plates: ${fm(n*pc,d)}. Into the lata: ${fm(S.take-n*pc,d)}.`+(n>=max&&n<5?' The money covers no more plates.':'')}
 function toNight(){const d=S.d,pc=E.plateCost(d),n=WHO.filter(([k])=>S.plates[k]).length;S.lataBefore=S.lata;S.lata+=S.take-n*pc;S.fed[d]=n;S.hungry[d]=WHO.filter(([k])=>!S.plates[k]).map(x=>x[1]);S.fedJon=false;
  const p=d<7?.5:d===8?1/3:0;if(n===5&&p&&rnd()<p)return go('jonatas');go('night')}
 function next(){const d=S.d;if(d===13)return go('ledger');S.prev={...S.prices};S.d++;S.plates={};S.take=0;S.rotted=0;
  go(S.d===7?'stock':'brief')}
-function enterEvening(){const d=S.d;if(d===6||d===13){S.rotted=S.stock.fruta;S.stock.fruta=0}const pc=E.plateCost(d),max=Math.min(5,Math.floor(S.take/pc));S.plates={};WHO.slice(0,max).forEach(([k])=>S.plates[k]=true)}
+function enterEvening(){const d=S.d;if(d===6||d===13){S.rotted=S.stock.fruta;S.stock.fruta=0}S.plates={}}
 document.addEventListener('click',e=>{const G=$('#gloss'),t=e.target.closest('button,[data-go]');
  if(e.target.closest('#gloss')){G.hidden=true;return}
  if(!t){G.hidden=true;return}
  if(t.dataset.k&&t.classList.contains('gl')){G.textContent=GL[t.dataset.k]+'  (tap to close)';G.hidden=false;return}
  G.hidden=true;
  if(t.dataset.go==='evening'&&(S.d===1||S.d===12)&&!S['sis'+S.d])return go('sister');
+ if(t.dataset.go==='price'&&S.d===11&&!S.rq){const cr=Math.round(S.prices.fre),r=cr/E.CONV,o=[['R$ '+r.toFixed(2),'right'],['R$ '+cr.toLocaleString('en-US'),'old'],['R$ '+(cr/1000).toFixed(2),'zeros']];for(let i=o.length-1;i>0;i--){const j=Math.floor(rnd()*(i+1));[o[i],o[j]]=[o[j],o[i]]}S.rq={opts:o,ans:null};return go('realq')}
  if(t.dataset.go){if(t.dataset.go==='evening')enterEvening();go(t.dataset.go);if(t.dataset.go==='evening')platesLeft();return}
  if(t.dataset.act==='quit'){if(S.q){S=fresh();return render()}S.q=true;t.textContent='Click again to quit. You lose this run.';return}
  if(t.dataset.act==='sis'){const d=S.d;S['sis'+d]=true;if(d===12)S.take+=E.plateCost(12);enterEvening();go('evening');platesLeft();return}
  if(t.dataset.act==='load')return doLoad();
  if(t.dataset.act==='open')return openCart();
+  if(t.dataset.rq){S.rq.ans={i:+t.dataset.rq};return go('realq')}
  if(t.dataset.ev)return resolve(t.dataset.ev);
  if(t.dataset.plate){const k=t.dataset.plate;S.plates[k]=!S.plates[k];return platesLeft()}
  if(t.dataset.act==='night')return toNight();
