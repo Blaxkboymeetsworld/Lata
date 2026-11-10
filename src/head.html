@@ -3,12 +3,10 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,600;1,400&family=Archivo+Black&family=Kalam:wght@400;700&family=Cormorant+Garamond:ital,wght@1,500&family=Playfair+Display:wght@700;900&display=swap">
 <style>
 /* Layout: one narrow column, a vendor's ruled school notebook by day, his chalk price slate by night. */
-:root{--paper:#f2f5f9;--card:#ffffff;--rule:#c5d5e8;--ink:#1a2d68;--soft:#4c566b;--margin:#c22f3d;--fruit:#dc9d00;--onfruit:#1b1400;--night:#0a0a0a;--news:#e8e2d2;--newsink:#1c1a16;--newsface:"Playfair Display",Georgia,"Times New Roman",serif;--nightfg:#ece8df;
+:root{--paper:#efe3cf;--card:#fbf6ec;--rule:#d9c6a5;--ink:#1a2d68;--soft:#4c566b;--margin:#c22f3d;--fruit:#dc9d00;--onfruit:#1b1400;--night:#0a0a0a;--news:#e8e2d2;--newsink:#1c1a16;--newsface:"Playfair Display",Georgia,"Times New Roman",serif;--nightfg:#ece8df;
 --display:"Archivo Black","Arial Black",Impact,sans-serif;--body:"Archivo","Helvetica Neue",Arial,sans-serif;--hand:"Kalam","Segoe Print","Comic Sans MS",cursive;--serif:"Cormorant Garamond",Georgia,serif}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#1b2421;--card:#232e2a;--rule:#34433e;--ink:#e7ede0;--soft:#a3b3ab;--margin:#ea7b79;--fruit:#e9b83a;--onfruit:#1b1400;color-scheme:dark}}
-:root[data-theme="dark"]{--paper:#1b2421;--card:#232e2a;--rule:#34433e;--ink:#e7ede0;--soft:#a3b3ab;--margin:#ea7b79;--fruit:#e9b83a;--onfruit:#1b1400;color-scheme:dark}
 html,body{height:100%}
-body{background:var(--paper);color:var(--ink);font:400 16px/1.5 var(--body);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:14px 28px}
+body{background:var(--paper) linear-gradient(180deg,#f6ecda 0%,#efe3cf 45%,#dcc7a3 100%) fixed;min-height:100vh;color:var(--ink);font:400 16px/1.5 var(--body);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:14px 28px}
 #app{max-width:40rem;margin:0 auto;display:flex;flex-direction:column;gap:14px}
 h1{font:400 clamp(4rem,24vw,8rem)/.9 var(--display);letter-spacing:-.02em;margin:0;text-wrap:balance}
 h2{font:400 1.35rem/1.15 var(--display);margin:0;text-wrap:balance}
