@@ -29,9 +29,9 @@ function q(g,d,p){const w=wtp(g,d);return Math.max(0,Math.min(1,(w.hi-p)/(w.hi-w
 function crowd(g,d,lost){const G=GROUPS[g],m=MULT[d][G.indexed?1:0];return Math.max(0,(G.n-(g==='viz'?lost||0:0))*m)}
 function demand(g,d,p,lost){return Math.round(crowd(g,d,lost)*q(g,d,p))}
 // one day of selling. Each buyer wants one kind of good; a buyer walks if the cart has none of it.
-function sell(d,prices,stock,lost){
+function sell(d,prices,stock,lost,f){
  const left={...stock},out={sold:{},goods:{fruta:0,salg:0,doce:0},missed:0,rev:0,units:0};
- for(const g of ORDER){const n=demand(g,d,prices[g],lost),p=GROUPS[g].pref,b=Math.round(n*p[1]),c=Math.round(n*p[2]),w={fruta:n-b-c,salg:b,doce:c};let s=0;
+ for(const g of ORDER){const n=Math.round(demand(g,d,prices[g],lost)*(f==null?1:f)),p=GROUPS[g].pref,b=Math.round(n*p[1]),c=Math.round(n*p[2]),w={fruta:n-b-c,salg:b,doce:c};let s=0;
   for(const k of GOODS){const t=Math.min(w[k],left[k]);left[k]-=t;out.goods[k]+=t;s+=t;out.missed+=w[k]-t}
   out.sold[g]=s;out.units+=s;out.rev+=s*prices[g]}
  out.left=left;return out}
