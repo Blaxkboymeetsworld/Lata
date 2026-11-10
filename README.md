@@ -27,7 +27,7 @@ The daily URV rates, the conversion of CR$ 2,750 to R$ 1 on July 1, 1994, the mi
 
 ## Open items
 
-- The two Wikimedia Commons photographs by Wilfredor need their license names added to the credits.
+- The three Wikimedia Commons photographs (two by Wilfredor, and “Favela do Vidigal”) need their authors and license names completed in the credits.
 - The daily URV values come through Wikipedia's copy of the Banco Central table. The Bank's own daily series still needs a direct citation.
 - The DIEESE food basket figure comes through news reports, not DIEESE's own table.
 
