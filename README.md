@@ -40,9 +40,9 @@ The game shows its works cited only to players who finish the two weeks. The ful
 - Brasil. Ministério da Saúde. *Política Nacional de Medicamentos*. Approved by Portaria nº 3.916, de 30 de outubro de 1998. Brasília: Ministério da Saúde, 2001.
 - Brasil. Medida Provisória nº 542, de 30 de junho de 1994. Câmara dos Deputados, Legislação Informatizada.
 - Brasil. Portaria Interministerial nº 4, de 2 de março de 1994. Sets the monthly minimum wage at 64.79 URV.
+- Cardoso, Eliana. “Inflation and Poverty.” NBER Working Paper No. 4006. Cambridge, MA: National Bureau of Economic Research, 1992.
 - Governo do Estado do Rio de Janeiro. CEASA-RJ. *Relatório de Gestão 2018*. States that CEASA-RJ was created by Decreto-Lei Estadual nº 228 of May 20, 1970.
 - DN Brasil. “Feijoada brasileira tem raízes portuguesas, aponta pesquisadora.” Quotes Roberta Malta Saldanha on the dish’s origin. Accessed November 9, 2026.
-- Fundação Ulysses Guimarães. *A incrível história de 30 anos que antecedeu o Pix*. 2026.
 - Hershberg, Eric. Lecture, Comparative Governance: Asia and Latin America, American University, fall 2019.
 - *Jornal do Commercio* (Rio de Janeiro). Front pages, June 21, 22 and 25, 1994, year 167, nos. 214, 215 and 218. “Valor da URV,” “Dólar comercial” and “Salário mínimo” indicators, and “Comércio não precisa expor preço em CR$” (June 21). Hemeroteca Digital Brasileira, Fundação Biblioteca Nacional.
 - Morrison, Toni. *Beloved*. New York: Knopf, 1987.
@@ -55,6 +55,8 @@ The game shows its works cited only to players who finish the two weeks. The ful
 
 - Photograph licenses are confirmed: the two Wilfredor photographs are CC0 1.0, and “Favela do Vidigal” (roney, 2006) is CC BY 2.0.
 - The Banco Central's “Plano Real” page confirms the URV endpoints (CR$ 647.50 on March 1, CR$ 2,750.00 on June 30) and the inflation figures, and the *Jornal do Commercio*'s front pages confirm the URV and minimum wage for June 21 (CR$ 2,406.05) and June 22 (CR$ 2,452.17, which settles a CR$ 2,454.17 typo in some tables), and its Saturday, June 25 front page prints no weekend rate, only Monday's CR$ 2,596.58. The other daily values come through Wikipedia's copy of the Bank's table; the paper's front-page box would confirm any of them.
+
+- O Pregão's July 1 edition says banks exchange cruzeiros reais for reais until July 15. Medida Provisória 542 sets no such deadline (it keeps the old notes good for payment for 30 days), so the *Jornal do Commercio* of July 1–2, 1994 should confirm or correct it.
 
 ## Rights
 
