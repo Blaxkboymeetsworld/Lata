@@ -34,7 +34,7 @@ The game shows its works cited only to players who finish the two weeks. The ful
 - Agência Brasil. “‘Todo mundo corria quando ouvia o remarcador’, recorda dona de casa.” July 2014.
 - Banco Central do Brasil. “Monetary Updating Factors and Interest Reference Rates.” Chapter 7 of the Bank’s English-language public finance manual. States the conversion CR$ 2,750.00 = R$ 1.00.
 - Banco Central do Brasil. “Plano Real.” Controle da Inflação. https://www.bcb.gov.br/controleinflacao/planoreal. Accessed November 9, 2026. States the URV rate of CR$ 647.50 on March 1, 1994 and CR$ 2,750.00 on June 30, 1994; the conversion of one URV to R$ 1.00 on July 1; and twelve-month inflation of 4,922% in June 1994, 916% at the end of 1994 and 22% in 1995.
-- Banco Central do Brasil. Daily values of the Unidade Real de Valor (URV), June 17–30, 1994. The Bank’s own page confirms the endpoints. The daily values come through the table in “Unidade real de valor,” Wikipedia, which cites the Banco Central.
+- Banco Central do Brasil. Daily values of the Unidade Real de Valor (URV), June 17–30, 1994. The Bank’s own page confirms the endpoints, and the front page of the *Jornal do Commercio* confirms June 21. The remaining daily values come through the table in “Unidade real de valor,” Wikipedia, which cites the Banco Central.
 - Brasil. Constituição da República Federativa do Brasil de 1988. Art. 196.
 - Brasil. Lei nº 8.080, de 19 de setembro de 1990. Dispõe sobre as condições para a promoção, proteção e recuperação da saúde. Câmara dos Deputados, Legislação Informatizada.
 - Brasil. Ministério da Saúde. *Política Nacional de Medicamentos*. Approved by Portaria nº 3.916, de 30 de outubro de 1998. Brasília: Ministério da Saúde, 2001.
@@ -44,6 +44,7 @@ The game shows its works cited only to players who finish the two weeks. The ful
 - DN Brasil. “Feijoada brasileira tem raízes portuguesas, aponta pesquisadora.” Quotes Roberta Malta Saldanha on the dish’s origin. Accessed November 9, 2026.
 - Fundação Ulysses Guimarães. *A incrível história de 30 anos que antecedeu o Pix*. 2026.
 - Hershberg, Eric. Lecture, Comparative Governance: Asia and Latin America, American University, fall 2019.
+- *Jornal do Commercio* (Rio de Janeiro). Front page, June 21, 1994, year 167, no. 214. “Valor da URV,” “Dólar comercial” and “Salário mínimo” indicators. Hemeroteca Digital Brasileira, Fundação Biblioteca Nacional.
 - Morrison, Toni. *Beloved*. New York: Knopf, 1987.
 - O Povo. “30 anos do Real.” June 30, 2024. Reprints the paper’s coverage of June 30 and July 1, 1994.
 - Price, Haley. *Death and Taxes: Debt and the Tokugawa Samurai*. JapanLab, University of Texas at Austin, 2022.
@@ -53,7 +54,7 @@ The game shows its works cited only to players who finish the two weeks. The ful
 ## Open items
 
 - Photograph licenses are confirmed: the two Wilfredor photographs are CC0 1.0, and “Favela do Vidigal” (roney, 2006) is CC BY 2.0.
-- The Banco Central's “Plano Real” page now confirms the URV endpoints (CR$ 647.50 on March 1, CR$ 2,750.00 on June 30) and the inflation figures. The daily values in between still come through Wikipedia's copy of the Bank's table. The Bank's communiqués would replace it.
+- The Banco Central's “Plano Real” page confirms the URV endpoints (CR$ 647.50 on March 1, CR$ 2,750.00 on June 30) and the inflation figures, and the *Jornal do Commercio*'s front page of June 21, 1994 confirms that day's URV (CR$ 2,406.05) and minimum wage. The other daily values still come through Wikipedia's copy of the Bank's table, which matches the newspaper to the centavo. The paper's front-page box would confirm any other day.
 
 ## Rights
 
