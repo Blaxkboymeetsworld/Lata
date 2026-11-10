@@ -19,6 +19,7 @@ Open `index.html` in any browser. No install and no login.
 | `src/photos.js` | The photographs, embedded for the single-file build. Generated from `img/`. |
 | `src/sim.js` | The balance simulation. Run `node src/sim.js`. |
 | `img/` | The cropped photographs. |
+| `audio/` | The background music, “Love Samba” by Maxim Novak, used with the artist’s permission. |
 | `build.sh` | Rebuilds `index.html` from `src/`. Run `sh build.sh`. |
 
 ## What comes from the record, and what the game invents

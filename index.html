@@ -261,6 +261,8 @@ cited:()=>`<div class="plain cite"><h2>Works Cited</h2>
 <p>Price, Haley. <i>Death and Taxes: Debt and the Tokugawa Samurai</i>. JapanLab, University of Texas at Austin, 2022.</p>
 <p>Rec.Sport.Soccer Statistics Foundation (RSSSF). “World Cup 1994 Finals.” Match dates, scores and goalscorers.</p>
 <p>Rocha, Sonia. <i>Renda e Pobreza: Os Impactos do Plano Real</i>. Texto para Discussão nº 439. Rio de Janeiro: Ipea, December 1996.</p>
+<h2>Music Credits</h2>
+<p>Novak, Maxim. “Love Samba.” Free Music Archive. Used with the artist’s permission.</p>
 <h2>Image Credits</h2>
 <p>Wilfredor. “Street vendors and pedestrians on the Rio de Janeiro waterfront at sunset, Brazil” and “Beach vendor speaking with beachgoers on Praia do Forte, Cabo Frio, Brazil.” Photographs, June 2023. Wikimedia Commons. Released under Creative Commons CC0 1.0 Universal (public domain dedication).</p>
 <p>roney. “vidigal - rio de janeiro - rj” (Wikimedia Commons title: “Favela do Vidigal”). Photograph, January 2006. Posted to Flickr by roney; reviewed on Wikimedia Commons. Licensed under Creative Commons Attribution 2.0 Generic (CC BY 2.0), https://creativecommons.org/licenses/by/2.0/. Resized for this game; no other changes.</p>
@@ -319,6 +321,14 @@ document.addEventListener('click',e=>{const G=$('#gloss'),t=e.target.closest('bu
  if(t.dataset.act==='next')return next();
  if(t.dataset.act==='restart'){S=fresh();return render()}});
 document.addEventListener('input',e=>{const t=e.target;if(t.dataset&&t.dataset.k)upd(t.dataset.k);if(t.id&&t.id.indexOf('l_')===0)updLoad();if(t.id==='c_cr'||t.id==='c_urv'){const r=known(S.d),o=document.querySelector(t.id==='c_cr'?'#c_urv':'#c_cr'),v=parseFloat(String(t.value).replace(',','.'));o.value=isNaN(v)?'':(t.id==='c_cr'?(v/r).toFixed(2):(v*r).toFixed(0))}});
+const AU=new Audio('audio/love-samba.mp3');AU.volume=.35;AU.preload='auto';let muted=false,started=false,gap=null;
+try{muted=localStorage.getItem('lata_muted')==='1'}catch(e){}
+const MB=document.createElement('button');MB.className='quiet';MB.style.cssText='position:fixed;right:max(12px,env(safe-area-inset-right,0px));bottom:max(12px,env(safe-area-inset-bottom,0px));z-index:30;padding:8px 12px;background:var(--card);border:1px solid var(--rule)';
+function mbLabel(){MB.textContent=muted?'♪ Music off':'♪ Music on';MB.setAttribute('aria-pressed',String(!muted))}mbLabel();document.body.appendChild(MB);
+function playMusic(){if(muted)return;const r=AU.play();if(r&&r.catch)r.catch(()=>{started=false})}
+AU.addEventListener('ended',()=>{if(muted)return;clearTimeout(gap);gap=setTimeout(playMusic,3000)});
+document.addEventListener('click',e=>{if(e.target===MB)return;if(!started){started=true;playMusic()}});
+MB.addEventListener('click',()=>{muted=!muted;try{localStorage.setItem('lata_muted',muted?'1':'0')}catch(e){}mbLabel();clearTimeout(gap);if(muted)AU.pause();else{started=true;playMusic()}});
 function start(data){S=data&&data.S&&data.S.v===3?data.S:fresh();render();if(S.screen==='evening')platesLeft()}
 window.claude?.hot?.snapshot?.(()=>({S}));
 window.claude?.hot?.ready?window.claude.hot.ready(start):start(window.claude?.hot?.data??{});
