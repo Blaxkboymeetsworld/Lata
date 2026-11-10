@@ -52,7 +52,7 @@ function bar(){return`<div class="bar num"><span>${DAYS[S.d]}, 1994 · Day ${S.d
 function calcBox(){const d=S.d;if(calc()){const r=known(d);return`<div class="calc"><p class="eyebrow">Calculator</p><p class="small">The last rate you heard: <b class="num">1 URV = CR$ ${r.toLocaleString('en-US',{minimumFractionDigits:2})}</b></p><div class="row"><label for="c_cr">Cruzeiros reais (CR$)<input id="c_cr" inputmode="decimal" placeholder="0"></label><label for="c_urv">URV<input id="c_urv" inputmode="decimal" placeholder="0"></label></div></div>`}
  return`<div class="calc dead"><p class="eyebrow">Calculator</p><p class="hand num">- - - -</p><p class="small">The display went grey Friday night. You do the math yourself.</p></div>`}
 const DAYPH=['morro1','lapa','alley','morro2','bunting','beachvendor','boats','alley','bunting','morro1','morro2','road','dog','morro1'];
-function ph(k){const p=PHOTOS[k];return`<figure class="ph"><img src="${p.u}" alt="${p.a}"><figcaption>${p.c}</figcaption></figure>`}
+function ph(k){const p=PHOTOS[k];return`<figure class="ph"><img src="${p.u}" alt="${p.a}"></figure>`}
 function slot(t){return`<div class="slot">Art slot · ${t}</div>`}
 function go(s){S.screen=s;S.q=false;render()}
 function render(){const f=SCREENS[S.screen];app.innerHTML=f()+navHtml();window.scrollTo(0,0);const h=app.querySelector('h1,h2');if(h){h.tabIndex=-1}}
