@@ -30,7 +30,6 @@ The daily URV rates, the conversion of CR$ 2,750 to R$ 1 on July 1, 1994, the mi
 
 - Photograph licenses are confirmed: the two Wilfredor photographs are CC0 1.0, and “Favela do Vidigal” (roney, 2006) is CC BY 2.0.
 - The Banco Central's “Plano Real” page now confirms the URV endpoints (CR$ 647.50 on March 1, CR$ 2,750.00 on June 30) and the inflation figures. The daily values in between still come through Wikipedia's copy of the Bank's table. The Bank's communiqués would replace it.
-- The DIEESE food basket figure comes through news reports, not DIEESE's own table.
 
 ## Rights
 
