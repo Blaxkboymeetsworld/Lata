@@ -136,7 +136,7 @@ cited:()=>`<div class="plain cite"><h2>Works Cited</h2>
 <p>Blackmon, Jonathan. All other photographs. Brazil, 2023–24.</p>
 <p>The photographs show these places as they look today, not as they looked in 1994.</p>
 </div><button class="go" data-go="black">End</button>`,
-black:()=>`<div class="night fade" style="cursor:default"><p style="color:var(--nightfg);opacity:.7;font-style:italic;margin:0 0 24px">Estamos juntos, mano!</p><button class="alt" style="width:auto;border-color:var(--nightfg);color:var(--nightfg);opacity:.5" data-act="restart">Play again</button></div>`};
+black:()=>`<div class="night fade" style="cursor:default"><p style="color:var(--nightfg);opacity:.7;font-style:italic;margin:0 0 24px">Tamo junto, mano!</p><button class="alt" style="width:auto;border-color:var(--nightfg);color:var(--nightfg);opacity:.5" data-act="restart">Play again</button></div>`};
 function upd(k){const el=$('#p_'+k);if(!el)return;const d=S.d,real=E.isReal(d),P=real?el.value/100*E.CONV:+el.value;
  $('#o_'+k).textContent=fm(P,d);let h=[];
  if(S.prev)h.push('Yesterday you asked '+fm(S.prev[k],d-1)+'.');
