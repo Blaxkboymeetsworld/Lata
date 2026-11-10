@@ -44,7 +44,7 @@ The game shows its works cited only to players who finish the two weeks. Here is
 - Governo do Estado do Rio de Janeiro. CEASA-RJ. *Relatório de Gestão 2018*. States that CEASA-RJ was created by Decreto-Lei Estadual nº 228 of May 20, 1970.
 - DN Brasil. “Feijoada brasileira tem raízes portuguesas, aponta pesquisadora.” Quotes Roberta Malta Saldanha on the dish’s origin. Accessed November 9, 2026.
 - Hershberg, Eric. Lecture, Comparative Governance: Asia and Latin America, American University, fall 2019.
-- *Jornal do Commercio* (Rio de Janeiro). Front pages, June 21, 22 and 25 and July 1, 2 and 15, 1994, year 167, nos. 214, 215, 218, 223, 224 and 235, and page 5, July 15, 1994. “Valor da URV,” “Dólar comercial” and “Salário mínimo” indicators, and “Comércio não precisa expor preço em CR$” (June 21), “Somente saque e troca nos bancos” (July 1), and “Calma nos bancos e confusão nos preços,” “Sunab constata diversas reduções” and “Shoppings com preço em URV e sem troco” (July 2), and “Depois do real, caíram os preços da cesta básica,” the commercial dollar and “Inflação de 2,43% em URV” (July 15). Hemeroteca Digital Brasileira, Fundação Biblioteca Nacional.
+- *Jornal do Commercio* (Rio de Janeiro). Front pages, June 21, 22, 25, 26–27 and 28 and July 1, 2 and 15, 1994, year 167, nos. 214, 215, 218, 219, 220, 223, 224 and 235, and page 5, July 15, 1994. “Valor da URV,” “Dólar comercial” and “Salário mínimo” indicators, and “Comércio não precisa expor preço em CR$” (June 21), “Liquidez e calma até a troca de moedas” and “Desconfiança” (June 26–27), “Geadas arrasam lavouras e afetam o Plano” (June 28), “Somente saque e troca nos bancos” (July 1), and “Calma nos bancos e confusão nos preços,” “Sunab constata diversas reduções” and “Shoppings com preço em URV e sem troco” (July 2), and “Depois do real, caíram os preços da cesta básica,” the commercial dollar and “Inflação de 2,43% em URV” (July 15). Hemeroteca Digital Brasileira, Fundação Biblioteca Nacional.
 - Morrison, Toni. *Beloved*. New York: Knopf, 1987.
 - O Povo. “30 anos do Real.” June 30, 2024. Reprints the paper’s coverage of June 30 and July 1, 1994.
 - Price, Haley. *Death and Taxes: Debt and the Tokugawa Samurai*. JapanLab, University of Texas at Austin, 2022.
@@ -54,9 +54,10 @@ The game shows its works cited only to players who finish the two weeks. Here is
 ## How I checked the record
 
 - I confirmed the URV endpoints (CR$ 647.50 on March 1, CR$ 2,750.00 on June 30) and the inflation figures on the Banco Central's "Plano Real" page.
-- I checked the daily URV against the front page of Rio's *Jornal do Commercio* for June 21, June 22, June 25, July 1 and July 2, 1994. Every value matched, and June 22 settled a CR$ 2,454.17 typo in some tables. The *Jornal do Brasil* printed the rate on page 10 in type I could not read from the scan, so I don't cite it.
+- I checked the daily URV against the front page of Rio's *Jornal do Commercio* for June 21, June 22, June 25, June 26–27, June 28, July 1 and July 2, 1994. Every value matched, and June 22 settled a CR$ 2,454.17 typo in some tables. The *Jornal do Brasil* printed the rate on page 10 in type I could not read from the scan, so I don't cite it.
 - I took the other daily values from Wikipedia's copy of the Bank's table. The paper's front-page box would confirm any of them.
 - The law (Medida Provisória 542) gave the old notes 30 days. The *Jornal do Commercio* told readers July 15 on July 1, then the 30th on July 2. I kept the paper's story as it changed, the way a reader met it in 1994. The July 15 edition mentions no deadline, so the 30th stands.
+- The wholesale price jump on June 27 matches the frost the paper reported on June 28 (about 80% of São Paulo's vegetable harvest lost). I invented the size of the jump.
 
 ## Rights
 
