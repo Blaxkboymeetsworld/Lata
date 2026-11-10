@@ -21,7 +21,7 @@ function rate(d){return RATES[d]}
 function plateCost(d){return isReal(d)?PLATE_URV*CONV:Math.round(PLATE_URV*RATES[d]/10)*10}
 function unitCost(d,k){return COST_URV[k||'fruta'][d<7?0:1]*RATES[d]}
 function total(st){return st.fruta+st.salg+st.doce}
-function loadCost(d,load){return Math.round(GOODS.reduce((a,k)=>a+load[k]*unitCost(d,k),0))}
+function loadCost(d,load){return GOODS.reduce((a,k)=>a+Math.round(load[k]*unitCost(d,k)),0)}
 function defaultLoad(d,lata,carry){const need={};for(const k of GOODS)need[k]=Math.max(0,TARGET[k]-carry[k]);
  const f=Math.min(1,lata/Math.max(1,loadCost(d,need)));const load={};for(const k of GOODS)load[k]=Math.floor(need[k]*f/5)*5;return load}
 function wtp(g,d){const G=GROUPS[g],r=G.indexed?RATES[d]:ANCHOR;return{lo:G.lo*r,hi:G.hi*r}}

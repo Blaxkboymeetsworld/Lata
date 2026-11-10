@@ -190,7 +190,7 @@ function upd(k){const el=$('#p_'+k);if(!el)return;const d=S.d,real=E.isReal(d),P
  $('#h_'+k).textContent=h.join(' ')}
 function readLoad(){const l={};for(const k of E.GOODS)l[k]=+$('#l_'+k).value;return l}
 function updLoad(){if(!$('#l_fruta'))return;const d=S.d,l=readLoad(),n=E.total(l),cost=E.loadCost(d,l),over=cost>S.lata,full=n+E.total(S.stock)>E.CAP;
- for(const k of E.GOODS)$('#lo_'+k).textContent=l[k]+' bags';
+ for(const k of E.GOODS)$('#lo_'+k).innerHTML=l[k]+' bags<span class="cost">'+fm(E.loadCost(d,{fruta:0,salg:0,doce:0,[k]:l[k]}),d)+'</span>';
  $('#loadsum').textContent=over?`${n} bags cost ${fm(cost,d)}. The lata holds ${fm(S.lata,d)}. You cannot pay for this load.`:full?`The cart carries ${E.CAP} bags. This load does not fit.`:`${n} bags cost ${fm(cost,d)}. The lata keeps ${fm(S.lata-cost,d)}.`;
  const b=document.querySelector('[data-act=load]');if(b)b.disabled=over||full}
 function doLoad(){const d=S.d,l=readLoad(),cost=E.loadCost(d,l);if(cost>S.lata||E.total(l)+E.total(S.stock)>E.CAP)return;S.lata-=cost;for(const k of E.GOODS)S.stock[k]+=l[k];S.bought=E.total(l);go('brief')}

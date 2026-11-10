@@ -42,7 +42,7 @@ button:focus-visible,input:focus-visible{outline:3px solid var(--margin);outline
 .grp:last-of-type{border-bottom:0}
 .grp header{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:2px 10px}
 .gtr{font-size:1.15rem;font-style:italic;font-weight:600;color:var(--ink)}
-.grp output{font-family:var(--hand);font-size:1.5rem;font-weight:700}
+.grp output{font-family:var(--hand);font-size:1.5rem;font-weight:700;text-align:right}.grp output .cost{display:block;font-family:var(--body);font-size:.9rem;font-weight:600;color:var(--soft);line-height:1.2}
 input[type=range]{width:100%;height:34px;margin:0;-webkit-appearance:none;appearance:none;background:transparent}
 input[type=range]::-webkit-slider-runnable-track{height:6px;background:var(--rule);border-radius:3px}
 input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:26px;height:26px;border-radius:50%;background:var(--fruit);border:3px solid var(--ink);margin-top:-10px}
@@ -110,7 +110,7 @@ function rate(d){return RATES[d]}
 function plateCost(d){return isReal(d)?PLATE_URV*CONV:Math.round(PLATE_URV*RATES[d]/10)*10}
 function unitCost(d,k){return COST_URV[k||'fruta'][d<7?0:1]*RATES[d]}
 function total(st){return st.fruta+st.salg+st.doce}
-function loadCost(d,load){return Math.round(GOODS.reduce((a,k)=>a+load[k]*unitCost(d,k),0))}
+function loadCost(d,load){return GOODS.reduce((a,k)=>a+Math.round(load[k]*unitCost(d,k)),0)}
 function defaultLoad(d,lata,carry){const need={};for(const k of GOODS)need[k]=Math.max(0,TARGET[k]-carry[k]);
  const f=Math.min(1,lata/Math.max(1,loadCost(d,need)));const load={};for(const k of GOODS)load[k]=Math.floor(need[k]*f/5)*5;return load}
 function wtp(g,d){const G=GROUPS[g],r=G.indexed?RATES[d]:ANCHOR;return{lo:G.lo*r,hi:G.hi*r}}
@@ -323,7 +323,7 @@ function upd(k){const el=$('#p_'+k);if(!el)return;const d=S.d,real=E.isReal(d),P
  $('#h_'+k).textContent=h.join(' ')}
 function readLoad(){const l={};for(const k of E.GOODS)l[k]=+$('#l_'+k).value;return l}
 function updLoad(){if(!$('#l_fruta'))return;const d=S.d,l=readLoad(),n=E.total(l),cost=E.loadCost(d,l),over=cost>S.lata,full=n+E.total(S.stock)>E.CAP;
- for(const k of E.GOODS)$('#lo_'+k).textContent=l[k]+' bags';
+ for(const k of E.GOODS)$('#lo_'+k).innerHTML=l[k]+' bags<span class="cost">'+fm(E.loadCost(d,{fruta:0,salg:0,doce:0,[k]:l[k]}),d)+'</span>';
  $('#loadsum').textContent=over?`${n} bags cost ${fm(cost,d)}. The lata holds ${fm(S.lata,d)}. You cannot pay for this load.`:full?`The cart carries ${E.CAP} bags. This load does not fit.`:`${n} bags cost ${fm(cost,d)}. The lata keeps ${fm(S.lata-cost,d)}.`;
  const b=document.querySelector('[data-act=load]');if(b)b.disabled=over||full}
 function doLoad(){const d=S.d,l=readLoad(),cost=E.loadCost(d,l);if(cost>S.lata||E.total(l)+E.total(S.stock)>E.CAP)return;S.lata-=cost;for(const k of E.GOODS)S.stock[k]+=l[k];S.bought=E.total(l);go('brief')}
